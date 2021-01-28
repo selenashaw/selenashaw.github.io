@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <title> Remote Streams Homework </title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="flexContainer">
+      <div class="left">
+        <div class="logo">
+          <image id="img-container" src="assets/agoraLogo.png"/>
+        </div>
+        <div class="chat">
+        <span>Join a chat!</span>
+        <input type="text" placeholder="Username" id="username"/>
+        <input type="text" placeholder="Channel" id="channel"/>
+        <button class="submitButton" id="joinButton">Join</button>
+          <div class="participantList">
+            <span>Participants</span>
+            <div id="participants">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="right">
+        <div id="myStream"></div>
+        <div class = "remoteStreamContainer">
+          <div id="remoteStream"></div>
+        </div>
+      </div>
+     </div>
+    <script src="https://cdn.agora.io/sdk/release/AgoraRTCSDK-3.0.0.js"></script>
+    <script src="agoraRtc.js"></script>
+  </body>
+</html>
