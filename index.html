@@ -1,36 +1,34 @@
 <html>
-  <head>
-    <title> Remote Streams Homework </title>
+  <header>
+    <title> Virtual Theater </title>
     <link rel="stylesheet" href="styles.css">
+
+    <!-- Setting the Font -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-  </head>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+    
+  </header>
   <body>
-    <div class="flexContainer">
-      <div class="left">
-        <div class="logo">
-          <img id="img-container" src="assets/agoraLogo.png" alt = "Agora Logo"/>
+    <div id="flexContainer">
+      <!-- Left and right containers are in place for the background image-->
+      <div id="left"></div>
+      <!-- The center contianer includes the logo and 'login' form for the app -->
+      <div id="center">
+        <div class = "logo">
+          <img id="myLogo" src="assets/logo.png"/>
         </div>
-        <div class="chat">
-        <span>Join a chat!</span>
-        <input type="text" placeholder="Username" id="username"/>
-        <input type="text" placeholder="Channel" id="channel"/>
-        <button class="submitButton" id="joinButton">Join</button>
-          <div class="participantList">
-            <span>Participants</span>
-            <div id="participants">
-            </div>
-          </div>
-        </div>
+        <span>Join a room to watch movies and videos with your friends!</span>
+        <form action="./videoCall.html" onsubmit="return validInputs()">
+          <br/>
+          <input type="text" id="username" placeholder="User Name"/>
+          <br/>
+          <input type="text" id="room" placeholder="Room Name"/>
+          <br/>
+          <button class="submitButton" id="join" onclick="validInputs()">Join</button>  
+        </form>
       </div>
-      <div class="right">
-        <div id="myStream"></div>
-        <div class = "remoteStreamContainer">
-          <div id="remoteStream"></div>
-        </div>
-      </div>
-     </div>
-    <script src="https://cdn.agora.io/sdk/release/AgoraRTCSDK-3.0.0.js"></script>
-    <script src="agoraRtc.js"></script>
+      <div id="right"></div>
+    </div>
+    <script src="setup.js"></script>
   </body>
 </html>
