@@ -1,96 +1,182 @@
 body{
-  font-family: 'Montserrat', sans-serif;
-  margin: 0;
-  overflow-y:hidden;
+  background-image: url("assets/curtains.jpg");
+  background-size: cover;
+  margin:0;
+  font-family: 'Merriweather', serif;
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
-.flexContainer{
+#flexContainer{
   display:flex;
   flex-direction: row;
 }
 
-.left{
- width: 25vw;
- height: 100vh;
- padding-left: 15px;
- padding-top: 15px;
- box-shadow: 2px 2px 5px #bdbdbd;
+#right{
+  width: 20vw;
+  position:relative;
+}
+
+#left{
+  width: 20vw;
+  height:100vh;
+}
+
+#center{
+  width: 60vw;
+  background-color: #161616;
+  padding-left: 5vw;
+  padding-right: 5vw;
+  font-size:120%;
+  color: #FFD700;
+  text-align: center;
 }
 
 .logo{
-  width: 40%;
+  margin:auto;
+  width: 15vw;
+  margin-bottom: 12.5vh;
 }
 
-#img-container{
-  max-width: 100%;
-  max-height: 100%;
+.logoInCall{
+  width: 10vw;
+  margin-top: 0px;
+  margin-left: 5px;
 }
 
-.chat{
-  margin-top: 20px;
-  margin-left: 10px;
+#myLogo{
+  width: 100%;
 }
 
 input{
-  margin-top: 10px;
-  /* padding: 5px; */
-  width: 90%;
-  /* font-size: .75rem; */
-  border: 1px solid #099dfd;
-  border-radius: 3px;
+  margin-top: 5px;
+  border: 1.5px solid #FFD700;
+  border-radius: 5px;
+  background-color: black;
+  font-size:90%;
+  color: #FFD700;
 }
 
-.submitButton{
-  background-color: #099dfd;
-  margin-top:10px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-right:20px;
-  padding-left:20px;
-  color: white;
-  border:none;
-  border-radius: 3px;
+button{
+  margin-top: 5px;
+  border: 1.5px solid #FFD700;
+  border-radius: 5px;
+  background-color: black;
+  font-size:90%;
+  color: #FFD700;
 }
 
-.participantList{
-  margin-top:50px;
+.badInput {
+  border: 1.5px solid red;
 }
 
-.right{
+#outerflex{
   display:flex;
-  flex-direction:column;
-  width: 100%;
-  height:100%;
+  flex-direction: column;
 }
 
-#myStream{
-  margin-top: 7vh;
-  margin-left: 2vw;
-  border:1px solid #099dfd;
-  border-radius: 3px;
-  height: 60vh;
-  width: 70vw;
+#topFlexContainer{
+  height: 75vh;
+  display:flex;
+  flex-direction: row;
 }
 
-.remoteStreamContainer{
-  width: 75vw;
-  margin-left: 2vw;
-  display: flex;
+#roomText{
+  margin: 0px;
+  margin-left: 10px;
+  font-size:75%;
+  color: #FFD700;
+  /* text-align: center; */
+}
+
+#streams{
   height: 25vh;
+  width: 100vw;
+  background-color: black;
+  margin: 0px;
+  padding: 5px;
   overflow-y:hidden;
   overflow-x: auto;
   white-space: nowrap;
 }
 
-/* I do this in the js file so it applies to all the created remote streams
-I couldnt figure out a different way to make them all take on these css properties
-#remoteStream{
-  margin-top:5vh;
+.controls{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 40px;
+  margin-right:auto;
+  margin-left: 0px;
+  height: 200px;
+  width: 60px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border:1px solid black;
+  background-color: rgba(78, 16, 16, 0.5);
+  box-shadow: 4px 4px 20px rgb(0, 0, 0);
+}
+
+.icon{
+  width: 45px;
+  cursor: pointer;
+}
+
+#leave{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+#centerScreen{
+  width: 60vw;
+  background-color: #161616;
   text-align: left;
-  justify-self: center;
-  display: inline-block;
-  border:1px solid #099dfd;
-  border-radius: 3px;
-  height: 20vh;
-  width: 20vw;
-} */
+}
+
+#chat {
+  margin-right:0px;
+  margin-left: auto;
+  margin-top: 15px;
+  width: 85%;
+  height: 62.5%;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border:1px solid black;
+  background-color: rgba(114, 32, 32, 0.5);
+  box-shadow: 4px 4px 20px rgb(0, 0, 0);
+  display: none;
+  overflow-x:hidden;
+  overflow-y: auto;
+}
+
+#messageInput{
+  margin-right:0px;
+  margin-left:auto;
+  text-align:end;
+  display: none;
+}
+
+#message{
+  margin-right: 0px;
+  margin-left: auto;
+  background-color: rgba(114, 32, 32);
+  border: 1.5px solid black;
+  color: black;
+  width: 85%;
+  border-radius: 0px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+#send{
+  font-size: .9rem;
+  padding: 2px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-top: 3px;
+  margin-right: 6vw;
+  background-color: rgba(114, 32, 32);
+  border: 1.5px solid black;
+  color: black;
+}
