@@ -1,0 +1,72 @@
+<html>
+  <header>
+    <title> Virtual Theater </title>
+    <link rel="stylesheet" href="styles.css">
+    
+    <!--Setting the Font-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+    
+  </header>
+  <body>
+    <!-- outerflex maintains the top and bottom half of the screen, bottom half is
+    for video streams and the top is for screensharing -->
+    <div class="outerFlex">
+      <div id="topFlexContainer">
+        <!-- This div holds all of the buttons for muting video, muting audio, 
+        opening the chat, and starting the screen share -->
+        <div id="right">
+          <div class = "logoInCall">
+            <img id="myLogo" src="assets/logo.png"/>
+          </div>
+          <div id="roomText">
+            <span>Room name: </span>
+          </div>
+          <div class = "controls">
+            <div class="icon" id="video">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <div class="icon" id="audio">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
+              </svg>
+            </div>
+            <div class = "icon" id="chatButton">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+              </svg>
+            </div>
+            <div class="icon" id="screenshare">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M3 5a2 2 0 012-2h10a2 2 0 012 2v8a2 2 0 01-2 2h-2.22l.123.489.804.804A1 1 0 0113 18H7a1 1 0 01-.707-1.707l.804-.804L7.22 15H5a2 2 0 01-2-2V5zm5.771 7H5V5h10v7H8.771z" clip-rule="evenodd" />
+              </svg>
+            </div>
+          </div>
+          <button class="submitButton" id="leave">Leave</button>
+        </div>
+        <!-- This div holds the screenshare once it has started -->
+        <div id="centerScreen"></div>
+        <!-- This div holds the chat, when the chat overflows a virtical scroll bar appears -->
+        <div id="left">
+          <div id="chat"></div>
+          <div id="messageInput">
+            <input type="text" id="message" placeholder="Type here"/>
+            </br>
+            <button class="submitButton" id="send">Send</button>  
+          </div>
+        </div>
+      </div>
+      <!-- The streams are located at the bottom of the page, when there
+      are more people than the screen can fit a horizontal scroll bar appears -->
+      <div id=streams>
+        <div id="myStream"></div>
+      </div>
+    </div>
+    <script src="setup.js"></script>
+    <script src="https://cdn.agora.io/sdk/release/AgoraRTCSDK-3.0.0.js"></script>
+    <script src="agora-rtm-sdk-1.4.1.js"></script>
+    <script src="agoraScript.js"></script>
+  </body>
+</html>
